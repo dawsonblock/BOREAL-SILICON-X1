@@ -10,6 +10,9 @@ find_package(ament_cmake REQUIRED)
 install(PROGRAMS
   scripts/boreal_bridge.py
   scripts/ai_agent.py
+  scripts/chacha20.py
+  scripts/siphash.py
+  policy/compiler.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

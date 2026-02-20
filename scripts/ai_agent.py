@@ -1,4 +1,10 @@
+#!/usr/bin/env python3
 import time, struct, spidev
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from siphash import siphash24
 from chacha20 import chacha20_encrypt
 

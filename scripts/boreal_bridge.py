@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.lifecycle import Node, State, TransitionCallbackReturn
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
@@ -8,6 +9,11 @@ import struct
 import time
 import spidev
 import math
+import os
+import sys
+
+# Add scripts paths to allow module importing when executed via ROS 2
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import SipHash and ChaCha20
 from siphash import siphash24
