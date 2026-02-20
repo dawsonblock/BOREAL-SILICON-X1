@@ -1,4 +1,4 @@
-#include "protocol.h"
+#include "../include/protocol.h"
 #include <stdint.h>
 
 // --- Motor Control HAL Hooks (Map to your MCU SDK) ---

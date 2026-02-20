@@ -1,4 +1,4 @@
-#include "protocol.h"
+#include "../include/protocol.h"
 #include <string.h>
 
 // --- HAL Hooks (Map to your MCU SDK: RP2040, STM32, etc.) ---

@@ -5,6 +5,13 @@ import struct
 
 # Import components
 import os
+import sys
+
+# Add policy and scripts paths to allow module importing across directories
+lib_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(os.path.join(lib_path, "policy"))
+sys.path.append(os.path.join(lib_path, "scripts"))
+
 from compiler import compile_policy
 from chacha20 import chacha20_encrypt
 
@@ -32,7 +39,9 @@ class SimulatedFirmware:
         self.last_seq = 0
 
         # Policy bytecode (loaded from local file)
-        policy_path = os.path.join(os.path.dirname(__file__), "policy.dsl")
+        policy_path = os.path.join(
+            os.path.dirname(__file__), "..", "policy", "policy.dsl"
+        )
         bc = compile_policy(policy_path)
         self.POLICY_BC = bc
         self.POLICY_LEN = len(bc)

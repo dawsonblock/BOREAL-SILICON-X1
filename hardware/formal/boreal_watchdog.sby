@@ -1,0 +1,15 @@
+[options]
+mode prove
+depth 50
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal boreal_watchdog.v
+read -formal boreal_watchdog_formal.sv
+prep -top formal_test
+
+[files]
+../rtl/boreal_watchdog.v
+boreal_watchdog_formal.sv

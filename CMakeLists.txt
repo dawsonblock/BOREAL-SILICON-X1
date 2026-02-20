@@ -8,24 +8,21 @@ endif()
 find_package(ament_cmake REQUIRED)
 
 install(PROGRAMS
-  boreal_bridge.py
-  ai_agent.py
-  compiler.py
-  chacha20.py
-  siphash.py
+  scripts/boreal_bridge.py
+  scripts/ai_agent.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
 install(FILES
-  policy.dsl
-  main.c
-  vm.c
-  siphash.c
-  motor_control.c
-  protocol.h
-  policy_bin.h
-  boreal_watchdog.v
-  boreal_watchdog_formal.sv
+  policy/policy.dsl
+  firmware/src/main.c
+  firmware/src/vm.c
+  firmware/src/siphash.c
+  firmware/src/motor_control.c
+  firmware/include/protocol.h
+  firmware/include/policy_bin.h
+  hardware/rtl/boreal_watchdog.v
+  hardware/formal/boreal_watchdog_formal.sv
   DESTINATION share/${PROJECT_NAME}/firmware
 )
 

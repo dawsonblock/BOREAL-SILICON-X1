@@ -1,4 +1,4 @@
-#include "protocol.h"
+#include "../include/protocol.h"
 #include <string.h>
 
 #define ROTL32(v, n) (((v) << (n)) | ((v) >> (32 - (n))))
