@@ -1,4 +1,4 @@
-# Safety Certification Package for Boreal Hybrid Control System
+# BOREAL-SILICON-X1 - Safety Certification Package for Boreal Hybrid Control System
 
 This package provides documentation stubs and templates for safety certification under ISO 13849 (machinery safety) and IEC 61508 (functional safety). The Boreal system is designed for SIL 2 / PL d classification as a safety-related control system.
 
@@ -15,6 +15,7 @@ This package provides documentation stubs and templates for safety certification
 **System**: Boreal Hybrid Control System
 **Application**: Safety-critical robotics control with AI supervision
 **Safety Functions**:
+
 - Emergency stop (brake engagement)
 - Speed limiting
 - Collision avoidance
