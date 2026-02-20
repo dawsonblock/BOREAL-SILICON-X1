@@ -11,10 +11,10 @@ extern int hw_spi_read_frame(uint8_t *cmd, uint8_t *len, uint8_t *data);
 extern action_t decision_vm(const pkt_t *p);
 extern int gate_allow(const action_t *a, const pkt_t *p);
 
-extern void motor_control_init();
+extern void motor_control_init(void);
 extern void motor_control_execute_action(const action_t *act);
 extern void motor_control_run(uint32_t current_ms);
-extern uint32_t hw_get_ms();
+extern uint32_t hw_get_ms(void);
 
 // 128-bit MAC Key
 const uint64_t MAC_KEY[2] = {0xA3B1C2D3E4F56789ULL, 0x1020304050607080ULL};
@@ -31,7 +31,7 @@ uint32_t last_seq = 0;
 // ==========================================
 // CORE 1: Insecure IO & SPI Polling
 // ==========================================
-void core1_main() {
+void core1_main(void) {
   uint8_t cmd, len, buf[64];
   while (1) {
     if (hw_spi_read_frame(&cmd, &len, buf)) {
@@ -49,7 +49,7 @@ void core1_main() {
 // ==========================================
 // CORE 0: Hard Real-Time Deterministic VM
 // ==========================================
-int main() {
+int main(void) {
   hw_multicore_launch_core1(core1_main);
 
   // Disable ALL interrupts on Core 0 for pure polling determinism
