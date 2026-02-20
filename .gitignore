@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+
+# Formal Verification
+boreal_watchdog/
+*.vcd
+*.sby
+*.ys
+*.smt2
+*.smtc
+engine_0/
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build / ROS 2
+build/
+install/
+log/
